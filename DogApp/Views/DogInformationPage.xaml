@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DogApp.Views.DogInformationPage">
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <StackLayout Orientation="Horizontal" Padding="10, 0">
+            <Label Text="Name: " HorizontalOptions="Start" />
+            <Label Text="{Binding Name}" HorizontalOptions="EndAndExpand" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Padding="10, 0">
+            <Label Text="Breed: " HorizontalOptions="Start" />
+            <Label Text="{Binding Breed}" HorizontalOptions="EndAndExpand" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Padding="10, 0">
+            <Label Text="Age: " HorizontalOptions="Start" />
+            <Label Text="{Binding Age}" HorizontalOptions="EndAndExpand" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Padding="10, 0">
+            <Label Text="Weight: " HorizontalOptions="Start" />
+            <Label Text="{Binding Weight}" HorizontalOptions="EndAndExpand" />
+        </StackLayout>
+        <Button Text="Edit" Clicked="OnEditButtonClicked" />
+    </StackLayout>
+</ContentPage>

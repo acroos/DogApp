@@ -1,6 +1,7 @@
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using DogApp.Views;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace DogApp
@@ -11,7 +12,7 @@ namespace DogApp
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
