@@ -1,0 +1,19 @@
+using System;
+using System.Collections.Generic;
+using DogApp.ViewModels;
+using Xamarin.Forms;
+
+namespace DogApp.Views
+{
+    public partial class <%= @view_class_name %> : ContentPage
+    {
+        private readonly <%= @view_model_class_name %> _viewModel;
+
+        public <%= @view_class_name %>()
+        {
+            InitializeComponent();
+            _viewModel = new <%= @view_model_class_name %>();
+            BindingContext = _viewModel;
+        }
+    }
+}

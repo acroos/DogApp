@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+require 'erb'
+require 'pry'
+
+view_name = ARGV[0]
+
+xaml_template = File.read('../templates/ContentPage.xaml.erb')
+xaml_cs_template = File.read('../templates/ContentPage.xaml.cs.erb')
+view_model_template = File.read('../templates/ContentPageViewModel.cs.erb')
+
+@view_class_name = view_name
+@view_model_class_name = "#{view_name}ViewModel"
+
+xaml_renderer = ERB.new(xaml_template)
+xaml_cs_renderer = ERB.new(xaml_cs_template)
+view_model_renderer = ERB.new(view_model_template)
+
+File.write("../DogApp/Views/#{@view_class_name}.xaml", xaml_renderer.result)
+File.write("../DogApp/Views/#{@view_class_name}.xaml.cs", xaml_cs_renderer.result)
+File.write("../DogApp/ViewModels/#{@view_model_class_name}.cs", view_model_renderer.result)
